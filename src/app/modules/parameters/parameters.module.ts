@@ -13,7 +13,9 @@ import { RoomRemoveComponent } from './room/room-remove/room-remove.component';
 
 
 @NgModule({
-  declarations: [PublicationCreationComponent, PublicationEditionComponent, PublicationListComponent, PublicationRemoveComponent, RoomCreationComponent, RoomEditionComponent, RoomListComponent, RoomRemoveComponent],
+  declarations: [PublicationCreationComponent, PublicationEditionComponent,
+    PublicationListComponent, PublicationRemoveComponent, RoomCreationComponent,
+     RoomEditionComponent, RoomListComponent, RoomRemoveComponent],
   imports: [
     CommonModule,
     ParametersRoutingModule

@@ -8,6 +8,14 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: DefaultComponent
+  },
+  {
+    path: 'home',
+    component: DefaultComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/'
   }
 ];
 
