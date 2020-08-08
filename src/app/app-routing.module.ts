@@ -13,6 +13,11 @@ const routes: Routes = [
     path: 'home',
     component: DefaultComponent
   },
+  // ESTA SIEMPRE DEBE SER LA ULTIMA RUTA
+  {
+    path: 'parameters',
+    loadChildren: () => import('./modules/parameters/parameters-routing.module').then(m => m.ParametersRoutingModule)
+  },
   {
     path: '**',
     redirectTo: '/'

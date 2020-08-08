@@ -1,1 +1,39 @@
-<p>navbar works!</p>
+
+<!-- NAVBAR DE PUBLICATION, ROOM, HOME -->
+
+<nav>
+    <div class="nav-wrapper green">
+      <a routerLink="/home" class="brand-logo">Home</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a class="dropdown-trigger" data-target="publicationID">
+            Publication<i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-trigger" data-target="roomID">
+            Room<i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      </ul>
+      
+      <!-- DROPDOWN CONTENT DE PUBLICATION -->
+
+      <ul id="publicationID" class="dropdown-content">
+        <li><a routerLink="/parameters/publication-creation">Publication Creation</a></li>
+        <li><a routerLink="/parameters/publication-edition">Publication Edition</a></li>
+        <li><a routerLink="/parameters/publication-list">Publication List</a></li>
+        <li><a routerLink="/parameters/publication-remove">Publication Remove</a></li>
+      </ul>
+
+      <!-- DROPDOWN CONTENT DE ROOM -->
+
+      <ul id="roomID" class="dropdown-content">
+        <li><a routerLink="/parameters/room-creation">Room Creation</a></li>
+        <li><a routerLink="/parameters/room-edition">Room Edition</a></li>
+        <li><a routerLink="/parameters/room-list">Room List</a></li>
+        <li><a routerLink="/parameters/room-remove">Room Remove</a></li>
+      </ul>
+
+    </div>
+</nav>
