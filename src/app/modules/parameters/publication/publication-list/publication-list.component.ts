@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicationModel } from '../../../../models/parameters/publication.model';
+import { PublicationService } from '../../../../services/parameters/publication.service';
+import { HttpClient } from '@angular/common/http';
+
+
+declare const showMessage: any;
 
 @Component({
   selector: 'app-publication-list',
@@ -7,9 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicationListComponent implements OnInit {
 
-  constructor() { }
+  recordList: PublicationModel[];
+
+  constructor( private service: PublicationService) { }
 
   ngOnInit(): void {
+    this.service.getAllRecords().subscribe(
+      data => {
+        this.recordList = data;
+        console.log(this.recordList);
+      },
+      error => {
+        showMessage(error, 'There was an error with backend communication');
+      }
+    );
   }
 
 }
