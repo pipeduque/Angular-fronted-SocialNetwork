@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicationModel } from '../../../../models/parameters/publication.model';
 import { PublicationService } from '../../../../services/parameters/publication.service';
-import { HttpClient } from '@angular/common/http';
 
 
 declare const showMessage: any;

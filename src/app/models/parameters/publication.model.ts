@@ -1,3 +1,4 @@
+
 export class PublicationModel{
     // tslint:disable-next-line: ban-types
     id?: string;

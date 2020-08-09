@@ -8,7 +8,6 @@ import {RoomCreationComponent} from './room/room-creation/room-creation.componen
 import {RoomListComponent} from './room/room-list/room-list.component';
 import {RoomEditionComponent} from './room/room-edition/room-edition.component';
 import {RoomRemoveComponent} from './room/room-remove/room-remove.component';
-import { HttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   {
