@@ -10,6 +10,7 @@ import { SideMenuComponent } from './public/master-page/side-menu/side-menu.comp
 import { HeroComponent } from './public/master-page/hero/hero.component';
 import { FooterComponent } from './public/master-page/footer/footer.component';
 import { RegisterComponent } from './modules/users/register/register.component';
+import { CardsComponent } from './public/master-page/cards/cards.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { RegisterComponent } from './modules/users/register/register.component';
     HeroComponent,
     FooterComponent,
     RegisterComponent,
+    CardsComponent,
   ],
   imports: [
     BrowserModule,
