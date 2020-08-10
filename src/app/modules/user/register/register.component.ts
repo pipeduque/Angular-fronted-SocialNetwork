@@ -4,6 +4,7 @@ import { FormsConfig } from '../../../config/forms-config'
 import { UserService } from '../../../services/user.service';
 import { UserModel } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
+import SHA512 from 'crypto-js/sha512';
 
 declare const showMessage: any;
 
@@ -72,7 +73,7 @@ export class RegisterComponent implements OnInit {
     model.cellphone = this.fgv.cellphone.value;
     model.gender = this.fgv.gender.value;
     model.email = this.fgv.email.value;
-    model.password = this.fgv.password.value;
+    model.password = SHA512(this.fgv.password.value).toString();
     model.birthday = this.fgv.birthday.value;
     model.pathPhoto = this.fgv.pathPhoto.value;
     model.interests = this.fgv.interests.value;
