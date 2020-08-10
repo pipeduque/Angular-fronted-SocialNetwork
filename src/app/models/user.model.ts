@@ -1,15 +1,15 @@
 export class UserModel {
-    id?: string;
-    firstName: string;
-    secondName?: string;
-    surname: string;
-    secondSurname?: string;
-    cellphone: string;
-    gender: string;
-    email: string;
-    password: string;
-    birthday: Date;
-    pathPhoto?: string;
+    id?: String;
+    firstName: String;
+    secondName?: String;
+    surname: String;
+    secondSurname?: String;
+    cellphone: String;
+    gender: String;
+    email: String;
+    password: String;
+    birthday: String;
+    pathPhoto?: String;
     interests?: [];
     role?: number;
 }
