@@ -1,0 +1,105 @@
+<fieldset>
+    <legend>REGISTRARTE</legend>
+    <div class="row">
+        <form [formGroup]="fgValidator" class="col s12" id="reg-form">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="firstName" formControlName="firstName" type="text">
+                    <label for="firstName">Primer nombre*</label>
+                    <div class="warning-validator"
+                        *ngIf="fgv.firstName.errors && (fgv.firstName.dirty || fgv.firstName.touched)">
+                        <strong *ngIf="fgv.firstName.errors.required">
+                            Este campo es requerido.
+                        </strong>
+                        <strong *ngIf="fgv.firstName.errors.minlength">
+                            Este campo debe tener minimo {{firstNameMinLength}} caracteres.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="secondName" formControlName="secondName" type="text">
+                    <label for="secondName">Segundo nombre</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="surname" formControlName="surname" type="text">
+                    <label for="surname">Primer apellido*</label>
+                    <div class="warning-validator"
+                        *ngIf="fgv.surname.errors && (fgv.surname.dirty || fgv.surname.touched)">
+                        <strong *ngIf="fgv.surname.errors.required">
+                            Este campo es requerido.
+                        </strong>
+                        <strong *ngIf="fgv.surname.errors.minlength">
+                            Este campo debe tener minimo {{surnameMinLength}} caracteres.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="secondSurname" formControlName="secondSurname" type="text">
+                    <label for="secondSurname">Segundo apellido</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="cellphone" formControlName="cellphone" type="text">
+                    <label for="cellphone">Número de celular*</label>
+                    <div class="warning-validator"
+                        *ngIf="fgv.cellphone.errors && (fgv.cellphone.dirty || fgv.cellphone.touched)">
+                        <strong *ngIf="fgv.cellphone.errors.required">
+                            Este campo es requerido.
+                        </strong>
+                        <strong *ngIf="fgv.cellphone.errors.minlength">
+                            Este campo debe tener minimo {{cellphoneMinLength}} caracteres.
+                        </strong>
+                        <strong *ngIf="fgv.cellphone.errors.maxlength">
+                            Este campo debe tener maximo {{cellphoneMaxLength}} caracteres.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" formControlName="email" type="email">
+                    <label for="email">Email</label>
+                    <div class="warning-validator" *ngIf="fgv.email.errors && (fgv.email.dirty || fgv.email.touched)">
+                        <strong *ngIf="fgv.email.errors.required">
+                            Este campo es requerido.
+                        </strong>
+                        <strong *ngIf="fgv.email.errors.email">
+                            Email incorrecto.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" formControlName="password" type="password" class="validate" minlength="6"
+                        required>
+                    <label for="password">Password</label>
+                </div>
+            </div>
+
+            <br>
+            <select class="browser-default" formControlName="gender" type="text">
+                <option value="" disabled selected>Genero*</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <br>
+            <div class="row">
+                <div class="input-field col s6">
+                    <button (click)="userRegisterFn()" class="btn btn-large btn-register waves-effect waves-light"
+                        type="button" name="action">Register
+                        <i class="material-icons right">done</i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</fieldset>

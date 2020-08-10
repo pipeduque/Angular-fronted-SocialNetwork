@@ -9,7 +9,6 @@ import { NavbarComponent } from './public/master-page/navbar/navbar.component';
 import { SideMenuComponent } from './public/master-page/side-menu/side-menu.component';
 import { HeroComponent } from './public/master-page/hero/hero.component';
 import { FooterComponent } from './public/master-page/footer/footer.component';
-import { RegisterComponent } from './modules/users/register/register.component';
 import { CardsComponent } from './public/master-page/cards/cards.component';
 
 
@@ -21,7 +20,6 @@ import { CardsComponent } from './public/master-page/cards/cards.component';
     SideMenuComponent,
     HeroComponent,
     FooterComponent,
-    RegisterComponent,
     CardsComponent,
   ],
   imports: [
