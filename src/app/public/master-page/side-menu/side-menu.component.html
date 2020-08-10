@@ -1,16 +1,22 @@
 <ul id="slide-out" class="sidenav">
-  <li><div class="user-view">
-    <div class="background">
-      <img src="images/office.jpg">
-    </div>
-    <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
-    <a href="#name"><span class="white-text name">John Doe</span></a>
-    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
-  </div></li>
-  <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-  <li><a href="#!">Second Link</a></li>
-  <li><div class="divider"></div></li>
-  <li><a class="subheader">Subheader</a></li>
-  <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="https://materializecss.com/images/office.jpg">
+            </div>
+            <a href="#user"><img class="circle" [src]="user.pathPhoto"></a>
+            <a href="#name"><span class="white-text name">{{user.name}}</span></a>
+            <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+        </div>
+    </li>
+    <li *ngIf="user.role==1"><a class="subheader">Administrador</a></li>
+    <li *ngIf="user.role==1"><a class="waves-effect" routerLink="/admin..">Registro de auditoría</a></li>
+    <li *ngIf="user.role==1">
+        <div class="divider"></div>
+    </li>
+    <li><a class="subheader">Opciones</a></li>
+    <li><a class="waves-effect" routerLink="/security/change-password">Cambiar contraseña</a></li>
+    <li><a class="waves-effect" routerLink="/security/logout">Desconectar</a></li>
+
 </ul>
-<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+<a *ngIf="user.isLogged" href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons right">menu</i></a>

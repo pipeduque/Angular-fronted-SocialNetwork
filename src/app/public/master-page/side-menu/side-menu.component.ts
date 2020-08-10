@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SecurityService } from 'src/app/services/security.service';
+import { LoginModel } from 'src/app/models/login.model';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  user: LoginModel;
+  subscription: Subscription;
+
+  constructor(private service: SecurityService) { }
 
   ngOnInit(): void {
+    this.subscription = this.service.getLoginData().subscribe(data => {
+      this.user = data;
+    });
   }
-
 }

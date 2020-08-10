@@ -7,6 +7,7 @@ import { SecurityService} from '../../../services/security.service';
 import SHA512 from 'crypto-js/sha512';
 
 declare const showMessage: any;
+declare const initSidenav: any;
 
 @Component({
   selector: 'app-login',

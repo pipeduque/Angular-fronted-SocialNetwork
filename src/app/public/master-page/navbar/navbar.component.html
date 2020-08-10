@@ -8,9 +8,6 @@
                 <a routerLink="/security/login">INICIAR SESIÓN</a>
             </li>
             <li *ngIf="isLogged">
-                <a routerLink="/security/logout">DESCONECTAR</a>
-            </li>
-            <li *ngIf="isLogged">
                 <a class="dropdown-trigger" data-target="publicationID">
             Publication<i class="material-icons right">arrow_drop_down</i>
           </a>
@@ -42,6 +39,8 @@
             <li><a routerLink="/parameters/room-list">Room List</a></li>
             <li><a routerLink="/parameters/room-remove">Room Remove</a></li>
         </ul>
+
+        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 
 

@@ -46,7 +46,10 @@ export class SecurityService {
       let data: LoginModel = {
         email: sessionData.data.email,
         password: sessionData.data.password,
-        isLogged: true
+        isLogged: true,
+        role: sessionData.data.role,
+        name: `${sessionData.data.firstName} ${sessionData.data.surname}`,
+        pathPhoto: sessionData.data.pathPhoto
       };
       localStorage.setItem('session', JSON.stringify(data));
       this.setLoginData(data);
