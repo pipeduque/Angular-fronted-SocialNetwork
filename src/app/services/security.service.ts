@@ -13,22 +13,22 @@ export class SecurityService {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
     this.verifyUserSession();
   }
 
-  verifyUserSession(){
+  verifyUserSession() {
     let userSession = this.getSessionData();
-    if(userSession){
+    if (userSession) {
       this.setLoginData(JSON.parse(userSession));
     }
   }
 
-  setLoginData(login: LoginModel){
+  setLoginData(login: LoginModel) {
     this.LoginData.next(login);
   }
 
-  getLoginData(){
+  getLoginData() {
     return this.LoginData.asObservable();
   }
 
@@ -38,9 +38,9 @@ export class SecurityService {
     });
   }
 
-  saveSeccionData(sessionData: any): Boolean{
+  saveSeccionData(sessionData: any): Boolean {
     let userSession = localStorage.getItem('session');
-    if(userSession){
+    if (userSession) {
       return false;
     } else {
       let data: LoginModel = {
@@ -57,12 +57,22 @@ export class SecurityService {
     }
   }
 
-  getSessionData(){
+  getSessionData() {
     let userSession = localStorage.getItem('session');
     return userSession;
   }
 
-  logout(){
+  sessionExist(): Boolean {
+    let userSession = this.getSessionData();
+    return (userSession) ? true : false;
+  }
+
+  verifyRolInSession(roleId) : Boolean{
+    let userSession = JSON.parse(this.getSessionData());
+    return(userSession.role == roleId); 
+  }
+
+  logout() {
     localStorage.removeItem('session');
     this.setLoginData(new LoginModel());
   }
