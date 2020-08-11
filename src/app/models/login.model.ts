@@ -1,4 +1,5 @@
 export class LoginModel {
+    id?: String;
     email: string;
     password: string;
     isLogged: Boolean = false;

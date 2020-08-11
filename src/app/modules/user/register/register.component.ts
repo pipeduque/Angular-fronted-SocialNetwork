@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   surnameMinLength = FormsConfig.SURNAME_MIN_LENGTH;
   cellphoneMinLength = FormsConfig.CELLPHONE_MIN_LENGTH;
   cellphoneMaxLength = FormsConfig.CELLPHONE_MAX_LENGTH;
+  passwordMinLength = FormsConfig.PASSWORD_MIN_LENGTH;
 
   constructor(
     private fb: FormBuilder,
@@ -39,8 +40,8 @@ export class RegisterComponent implements OnInit {
       cellphone: ['', [Validators.required, Validators.minLength(this.cellphoneMinLength), Validators.maxLength(this.cellphoneMaxLength)]],
       gender: [''],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      birthday: ['2020-08-10T05:03:47.800Z', [Validators.required, Validators.minLength(2)]],
+      password: ['', [Validators.required, Validators.minLength(this.passwordMinLength)]],
+      birthday: ['', [Validators.required]],
       pathPhoto: ['logo.png'],
       interests: [['amistad']],
       role: [4]

@@ -5,6 +5,7 @@ import { LoginModel} from 'src/app/models/login.model';
 
 import { SecurityService} from '../../../services/security.service';
 import SHA512 from 'crypto-js/sha512';
+import { FormsConfig } from 'src/app/config/forms-config';
 
 declare const showMessage: any;
 declare const initSidenav: any;
@@ -17,6 +18,7 @@ declare const initSidenav: any;
 export class LoginComponent implements OnInit {
 
   fgValidator: FormGroup;
+  passwordMinLength = FormsConfig.PASSWORD_MIN_LENGTH;
 
   constructor(
     private fb: FormBuilder,
@@ -30,7 +32,7 @@ export class LoginComponent implements OnInit {
   formBuilding() {
     this.fgValidator = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(this.passwordMinLength)]]
     });
   }
 
@@ -39,7 +41,6 @@ export class LoginComponent implements OnInit {
       showMessage("Formulario invalido");
     } else {
       let model = this.getLoginData();
-      console.log(model);
       this.service.LoginUser(model).subscribe(
         data => {
           this.service.saveSeccionData(data);
@@ -47,7 +48,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/home']);
         },
         error => {
-          showMessage("Error al iniciar sección");
+          showMessage("Usuario o contraseña invalida");
         }
       );
     }

@@ -7,13 +7,13 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">mail_outline</i>
                     <input class="validate" formControlName="email" id="email" type="email">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                    <label for="email" data-error="wrong" data-success="right">Correo electrónico</label>
                     <div class="warning-validator" *ngIf="fgv.email.errors && (fgv.email.dirty || fgv.email.touched)">
                         <strong *ngIf="fgv.email.errors.required">
-                            Este campo es requerido.
+                            El correo electrónico es requerido.
                         </strong>
                         <strong *ngIf="fgv.email.errors.email">
-                            Email incorrecto.
+                            Correo electrónico inválido.
                         </strong>
                     </div>
                 </div>
@@ -22,22 +22,32 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock_outline</i>
                     <input formControlName="password" id="password" type="password">
-                    <label for="password">Password</label>
+                    <label for="password">Contraseña</label>
+                    <div class="warning-validator" *ngIf="fgv.password.errors && (fgv.password.dirty || fgv.password.touched)">
+                        <strong *ngIf="fgv.password.errors.required">
+                            La contraseña es requerida.
+                        </strong>
+                        <strong *ngIf="fgv.password.errors.minlength">
+                            La contraseña debe tener mínimo {{passwordMinLength}} caracteres.
+                        </strong>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <button (click)="LoginUserFn()" class="btn waves-effect waves-light" type="button" name="action">Login
+                    <button (click)="LoginUserFn()" class="btn waves-effect waves-light" type="button" name="action">Iniciar sesión
                         <i class="material-icons right">send</i>
                       </button>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6 m6 l6">
-                    <p class="margin medium-small"><a routerLink="/user/register">Register Now!</a></p>
+                    <p class="margin medium-small"><a routerLink="/security/reset-password">¿Olvidaste tu contraseña?</a></p>
                 </div>
+            </div>
+            <div class="row">
                 <div class="input-field col s6 m6 l6">
-                    <p class="margin right-align medium-small"><a routerLink="/security/reset-password">Forgot password?</a></p>
+                    <p class="margin medium-small"><a routerLink="/user/register">¿No tienes una cuenta? Regístrate</a></p>
                 </div>
             </div>
 

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ServiceConfig } from '../config/service-config';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { ResetPasswordModel } from '../models/reset-password.model';
+import { ChangePasswordModel } from '../models/change-password.model';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,14 @@ export class SecurityService {
 
   ResetPassword(data: ResetPasswordModel): Observable<any> {
     return this.http.post<any>(`${ServiceConfig.BASE_URL}password-reset`, data, {
+      headers: new HttpHeaders({
+        //Authization: `Bearer ${this.getToken()}`
+      })
+    });
+  }
+
+  ChangePassword(data: ChangePasswordModel): Observable<any> {
+    return this.http.post<any>(`${ServiceConfig.BASE_URL}change-password`, data, {
       headers: new HttpHeaders({})
     });
   }
@@ -51,6 +60,7 @@ export class SecurityService {
       return false;
     } else {
       let data: LoginModel = {
+        id: sessionData.data.id,
         email: sessionData.data.email,
         password: sessionData.data.password,
         isLogged: true,
@@ -77,6 +87,12 @@ export class SecurityService {
   verifyRolInSession(roleId) : Boolean{
     let userSession = JSON.parse(this.getSessionData());
     return(userSession.role == roleId); 
+  }
+
+  getUserId(): string{
+    let userSession = JSON.parse(this.getSessionData());
+    console.log(userSession.id)
+    return userSession.id;
   }
 
   logout() {
