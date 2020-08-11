@@ -3,6 +3,7 @@ import { LoginModel } from '../models/login.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ServiceConfig } from '../config/service-config';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { ResetPasswordModel } from '../models/reset-password.model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,12 @@ export class SecurityService {
 
   LoginUser(login: LoginModel): Observable<any> {
     return this.http.post<any>(`${ServiceConfig.BASE_URL}login`, login, {
+      headers: new HttpHeaders({})
+    });
+  }
+
+  ResetPassword(data: ResetPasswordModel): Observable<any> {
+    return this.http.post<any>(`${ServiceConfig.BASE_URL}password-reset`, data, {
       headers: new HttpHeaders({})
     });
   }
