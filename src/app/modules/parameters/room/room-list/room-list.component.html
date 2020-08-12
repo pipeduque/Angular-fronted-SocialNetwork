@@ -1,1 +1,20 @@
-<h1>Room List Works</h1>
+<div class="row" *ngFor="let r of recordList">
+    <div class="col s12">
+      <div class="card large">
+        <div class="card-image">
+          <img src="http://localhost:3000/files/room/{{r.id}}" />
+          <span class="card-title"
+            ><h6>{{ r.reference }}</h6></span
+          >
+        </div>
+        <div class="card-content">
+          <p>{{ r.description }} <i class="material-icons inline">hotel</i></p>
+          <p>{{ r.rating }}<i class="material-icons inline">star_border</i></p>
+          <p>{{ r.status }}</p>
+        </div>
+        <div class="card-action">
+          <a class="waves-effect waves-light btn">SEE</a>
+        </div>
+      </div>
+    </div>
+  </div>
