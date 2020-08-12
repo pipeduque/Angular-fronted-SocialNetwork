@@ -4,15 +4,15 @@
     <div class="nav-wrapper green">
         <a routerLink="/home" class="brand-logo">Home</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li *ngIf="!isLogged">
+            <li *ngIf="!user.isLogged">
                 <a routerLink="/security/login">INICIAR SESIÓN</a>
             </li>
-            <li *ngIf="isLogged">
+            <li *ngIf="user.isLogged">
                 <a class="dropdown-trigger" data-target="publicationID">
             Publication<i class="material-icons right">arrow_drop_down</i>
           </a>
             </li>
-            <li *ngIf="isLogged">
+            <li *ngIf="user.isLogged">
                 <a class="dropdown-trigger" data-target="roomID">
             Room<i class="material-icons right">arrow_drop_down</i>
           </a>
