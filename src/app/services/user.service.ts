@@ -21,4 +21,12 @@ export class UserService {
       headers: new HttpHeaders({ })
     });
   }
+
+  /**
+   * Get record by id
+   * @param id id to search
+   */
+  getRecordById(id: String): Observable<UserModel> {
+    return this.http.get<UserModel>(`${ServiceConfig.BASE_URL}${this.entity}/${id}`);
+  }
 }
