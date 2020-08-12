@@ -21,7 +21,7 @@ const routes: Routes = [
   // ESTA SIEMPRE DEBE SER LA ULTIMA RUTA
   {
     path: 'parameters',
-    loadChildren: () => import('./modules/parameters/parameters-routing.module').then(m => m.ParametersRoutingModule)
+    loadChildren: () => import('./modules/parameters/parameters.module').then(m => m.ParametersModule)
   },
   {
     path: 'user',
