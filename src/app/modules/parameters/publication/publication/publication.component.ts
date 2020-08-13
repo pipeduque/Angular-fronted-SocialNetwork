@@ -3,7 +3,9 @@ import { PublicationModel } from 'src/app/models/parameters/publication.model';
 import { ReactionModel } from 'src/app/models/reaction.model';
 import { ReactionService } from '../../../../services/reaction-service';
 import { SecurityService } from 'src/app/services/security.service';
-import { PublicationService } from 'src/app/services/parameters/publication.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-publication',
   templateUrl: './publication.component.html',
@@ -13,13 +15,17 @@ export class PublicationComponent implements OnInit {
 
   @Input() publication: PublicationModel;
 
-  constructor(private publicationService: PublicationService, private securityService: SecurityService, private reactionService: ReactionService) { }
+  constructor(
+    private securityService: SecurityService, 
+    private reactionService: ReactionService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
   report(id){
-    console.log(id);
+    this.router.navigate([`/reports/report-publication/${id}`])
   }
 
   like(id) {

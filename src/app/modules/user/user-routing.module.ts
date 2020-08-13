@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { UnauthenticatedGuard } from 'src/app/guards/unauthenticated.guard';
+import { AuthenticatedGuard } from 'src/app/guards/authenticated.guard';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -14,7 +15,7 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: ProfileComponent,
-    // canActivate: [UnauthenticatedGuard]
+    canActivate: [AuthenticatedGuard]
   }
 ];
 

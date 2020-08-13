@@ -1,11 +1,11 @@
 <!-- NAVBAR DE PUBLICATION, ROOM, HOME -->
 
 <nav>
-    <div class="nav-wrapper green">
-        <a routerLink="/home" class="brand-logo">Home</a>
+    <div class="nav-wrapper #757575 grey darken-1">
+        <a routerLink="/home" class="brand-logo"><i class="material-icons">home</i>VIVIENDA COMPARTIDA</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li *ngIf="!user.isLogged">
-                <a routerLink="/security/login">INICIAR SESIÓN</a>
+                <a routerLink="/security/login"><i class="material-icons left">person</i>INICIAR SESIÓN</a>
             </li>
             <li *ngIf="user.isLogged">
                 <a class="dropdown-trigger" data-target="publicationID">

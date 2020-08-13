@@ -91,7 +91,6 @@ export class SecurityService {
 
   getUserId(): string{
     let userSession = JSON.parse(this.getSessionData());
-    console.log(userSession.id)
     return userSession.id;
   }
 

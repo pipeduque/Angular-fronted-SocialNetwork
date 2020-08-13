@@ -5,7 +5,7 @@
             <img class="activator" src="http://demo.geekslabs.com/materialize-v1.0/images/user-profile-bg.jpg" alt="user background">
         </div>
         <figure class="card-profile-image">
-            <img [src]="user.pathPhoto" alt="profile image" class="circle z-depth-2 responsive-img activator">
+            <img src="http://localhost:3000/files/user/{{user.id}}" alt="profile image" class="circle z-depth-2 responsive-img activator">
         </figure>
         <div class="card-content">
             <div class="row">
@@ -18,9 +18,6 @@
                 </div>
                 <div class="col s2 center-align">
                     <a class="waves-effect waves-light btn"><i class="mdi-maps-rate-review left"></i>Mensaje</a>
-                </div>
-                <div class="col s2 center-align">
-                    <a class="waves-effect waves-light btn"><i class="mdi-maps-rate-review left"></i>Reportar</a>
                 </div>
             </div>
         </div>
@@ -118,7 +115,7 @@
                         <div class="card-profile-title">
                             <div class="row">
                                 <div class="col s1">
-                                    <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-post-uer-image">
+                                    <img src="http://localhost:3000/files/user/{{user.id}}" alt="" class="circle responsive-img valign profile-post-uer-image">
                                 </div>
                                 <div class="col s10">
                                     <p class="grey-text text-darken-4 margin">{{user.firstName}}</p>
@@ -144,6 +141,9 @@
                         <div class="card-action row">
                             <div class="col s4 card-action-share">
                                 <a href="#">Like</a>
+                            </div>
+                            <div class="col s2 center-align">
+                                <a class="waves-effect waves-light btn" routerLink="/reports/report-user"><i class="mdi-maps-rate-review left"></i>Reportar</a>
                             </div>
 
                             <div class="input-field col s8 margin">

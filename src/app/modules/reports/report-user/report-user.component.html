@@ -1,0 +1,29 @@
+<div id="login-page" class="row">
+    <div class="col s12 z-depth-6 card-panel">
+        <form [formGroup]="fgValidator" class="report-form">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input formControlName="text" id="text" type="text">
+                    <label for="text">Describa precisamente lo ocurrido*</label>
+                    <div class="warning-validator" *ngIf="fgv.text.errors && (fgv.text.dirty || fgv.text.touched)">
+                        <strong *ngIf="fgv.text.errors.required">
+                            No puede enviar un reporte sin descripción.
+                        </strong>
+                        <strong *ngIf="fgv.text.errors.minlength">
+                            El reporte debe tener mínimo {{reportMinLength}} caracteres.
+                        </strong>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <button (click)="ReportUserFn()" class="btn waves-effect waves-light" type="button" name="action">Reportar
+                        <i class="material-icons right">send</i>
+                      </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
