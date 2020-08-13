@@ -1,0 +1,16 @@
+<div class="card large">
+    <div class="card-image">
+      <img src="http://localhost:3000/files/publication/{{ publication.id }}" />
+      <span class="card-title"
+        ><h6>{{ publication.title }}</h6></span
+      >
+    </div>
+    <div class="card-content">
+      <p>{{ publication.content }}</p>
+    </div>
+    <div class="card-action">
+      <a class="waves-effect waves-light btn">SEE</a>
+      <button (click)="report(publication.id)">Reportar</button>
+      <div class="col s3"><a (click)="like(publication.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">favorite</i></a></div>
+    </div>
+</div>

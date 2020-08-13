@@ -1,28 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col m6" *ngFor="let r of recordList">
-      <div class="card large">
-        <div class="card-image">
-          <img src="http://localhost:3000/files/publication/{{ r.id }}" />
-          <span class="card-title"
-            ><h6>{{ r.title }}</h6></span
-          >
-        </div>
-        <div class="card-content">
-          <p>{{ r.content }}</p>
-        </div>
-        <div class="card-action">
-
-          <div class="row">
-            <div class="col s3"><a class="waves-effect waves-light btn">SEE</a></div>
-            <div class="col s3"></div>
-            <div class="col s3"></div>
-            <div class="col s3"><a (click)="like(r.id)" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">favorite</i></a></div>
-          </div>
-
-          
-        </div>
-      </div>
+      <app-publication [publication]="r"></app-publication>
     </div>
   </div>
 </div>
