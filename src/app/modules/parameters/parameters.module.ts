@@ -10,15 +10,16 @@ import { RoomCreationComponent } from './room/room-creation/room-creation.compon
 import { RoomEditionComponent } from './room/room-edition/room-edition.component';
 import { RoomListComponent } from './room/room-list/room-list.component';
 import { RoomRemoveComponent } from './room/room-remove/room-remove.component';
+import { PublicationComponent } from './publication/publication/publication.component';
 
 
 @NgModule({
-  declarations: [PublicationCreationComponent, PublicationEditionComponent,
-    PublicationListComponent, PublicationRemoveComponent, RoomCreationComponent,
-     RoomEditionComponent, RoomListComponent, RoomRemoveComponent],
+  declarations: [PublicationCreationComponent, PublicationEditionComponent, PublicationListComponent,PublicationRemoveComponent, RoomCreationComponent,
+     RoomEditionComponent, RoomListComponent, RoomRemoveComponent, PublicationComponent],
   imports: [
     CommonModule,
     ParametersRoutingModule
-  ]
+  ],
+  exports:[PublicationListComponent, PublicationListComponent]
 })
 export class ParametersModule { }

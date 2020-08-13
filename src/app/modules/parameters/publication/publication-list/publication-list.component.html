@@ -1,20 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col m6" *ngFor="let r of recordList">
-      <div class="card large">
-        <div class="card-image">
-          <img src="http://localhost:3000/files/publication/{{ r.id }}" />
-          <span class="card-title"
-            ><h6>{{ r.title }}</h6></span
-          >
-        </div>
-        <div class="card-content">
-          <p>{{ r.content }}</p>
-        </div>
-        <div class="card-action">
-          <a class="waves-effect waves-light btn">SEE</a>
-        </div>
-      </div>
+      <app-publication [publication]="r"></app-publication>
     </div>
   </div>
 </div>
