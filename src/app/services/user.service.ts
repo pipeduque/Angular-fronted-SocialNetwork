@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
+import { PublicationModel } from '../models/publication.model';
 import { ServiceConfig } from '../config/service-config';
 import { Observable } from 'rxjs';
 
@@ -15,6 +16,10 @@ export class UserService {
   constructor(
     private http: HttpClient
   ) { }
+
+  getPublicationById(id: String): Observable<PublicationModel[]> {
+    return this.http.get<PublicationModel[]>(`${ServiceConfig.BASE_URL}${this.entity}s/${id}/publications`);
+  }
 
   UserRegistering(user: UserModel): Observable<UserModel> {
     return this.http.post<UserModel>(`${ServiceConfig.BASE_URL}${this.entity}`, user, {

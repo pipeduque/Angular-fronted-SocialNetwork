@@ -8,7 +8,7 @@ export class UserModel {
     gender: String;
     email: String;
     password: String;
-    birthday: String;
+    birthdate: String;
     pathPhoto?: String;
     interests?: [];
     role?: number;

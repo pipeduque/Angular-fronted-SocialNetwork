@@ -41,8 +41,8 @@ export class RegisterComponent implements OnInit {
       gender: [''],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(this.passwordMinLength)]],
-      birthday: ['', [Validators.required]],
-      pathPhoto: ['logo.png'],
+      birthdate: ['', [Validators.required]],
+      pathPhoto: ['sinfoto.png'],
       interests: [['amistad']],
       role: [4]
     });
@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit {
     model.gender = this.fgv.gender.value;
     model.email = this.fgv.email.value;
     model.password = SHA512(this.fgv.password.value).toString();
-    model.birthday = this.fgv.birthday.value;
+    model.birthdate = this.fgv.birthdate.value;
     model.pathPhoto = this.fgv.pathPhoto.value;
     model.interests = this.fgv.interests.value;
     model.role = this.fgv.role.value;

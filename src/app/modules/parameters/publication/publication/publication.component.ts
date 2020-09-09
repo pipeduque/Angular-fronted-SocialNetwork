@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PublicationModel } from 'src/app/models/parameters/publication.model';
+import { PublicationModel } from 'src/app/models/publication.model';
 import { ReactionModel } from 'src/app/models/reaction.model';
 import { ReactionService } from '../../../../services/reaction-service';
 import { SecurityService } from 'src/app/services/security.service';

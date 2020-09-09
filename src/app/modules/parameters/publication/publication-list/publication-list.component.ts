@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PublicationModel } from '../../../../models/parameters/publication.model';
-import { PublicationService } from '../../../../services/parameters/publication.service';
+import { PublicationModel } from '../../../../models/publication.model';
+import { PublicationService } from '../../../../services/publication.service';
 
 declare const showMessage: any;
 
@@ -19,7 +19,6 @@ export class PublicationListComponent implements OnInit {
     this.service.getAllRecords().subscribe(
       data => {
         this.recordList = data;
-        console.log(this.recordList);
       },
       error => {
         showMessage(error, 'There was an error with backend communication');

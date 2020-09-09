@@ -5,6 +5,5 @@ export class PublicationModel{
     content: string;
     userId: string;
     title: string;
-    roomId: string;
     pathImage?: string;
 }

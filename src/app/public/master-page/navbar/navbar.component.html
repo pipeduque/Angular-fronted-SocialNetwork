@@ -1,4 +1,4 @@
-<!-- NAVBAR DE PUBLICATION, ROOM, HOME -->
+<!-- NAVBAR DE PUBLICATION, HOME -->
 
 <nav>
     <div class="nav-wrapper #757575 grey darken-1">
@@ -10,11 +10,6 @@
             <li *ngIf="user.isLogged">
                 <a class="dropdown-trigger" data-target="publicationID">
             Publication<i class="material-icons right">arrow_drop_down</i>
-          </a>
-            </li>
-            <li *ngIf="user.isLogged">
-                <a class="dropdown-trigger" data-target="roomID">
-            Room<i class="material-icons right">arrow_drop_down</i>
           </a>
             </li>
         </ul>
@@ -31,14 +26,7 @@
             <li><a routerLink="/parameters/publication-remove">Publication Remove</a></li>
         </ul>
 
-        <!-- DROPDOWN CONTENT DE ROOM -->
 
-        <ul id="roomID" class="dropdown-content">
-            <li><a routerLink="/parameters/room-creation">Room Creation</a></li>
-            <li><a routerLink="/parameters/room-edition">Room Edition</a></li>
-            <li><a routerLink="/parameters/room-list">Room List</a></li>
-            <li><a routerLink="/parameters/room-remove">Room Remove</a></li>
-        </ul>
 
         <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 

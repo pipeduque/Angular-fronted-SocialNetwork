@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { UserModel } from 'src/app/models/user.model';
-import { OwnerService} from 'src/app/services/owner.service';
-import { RoomModel } from 'src/app/models/parameters/room.model';
-import { PublicationModel } from 'src/app/models/parameters/publication.model';
+import { PublicationModel } from 'src/app/models/publication.model';
 
 @Component({
   selector: 'app-profile',
@@ -15,12 +13,11 @@ export class ProfileComponent implements OnInit {
 
   user: UserModel;
   userId: String;
-  room: RoomModel[];
+  publication: PublicationModel[];
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService,
-    private ownerService: OwnerService
+    private userService: UserService
   ) {
     this.getUserId();
   }
@@ -31,10 +28,10 @@ export class ProfileComponent implements OnInit {
 
   async getUserId(){
     this.userId = await this.route.snapshot.params["id"];
-    this.ownerService.getRoomsById(this.userId).subscribe(
-      data => {
-        this.room = data;
-        console.log(this.room);
+    this.userService.getPublicationById(this.userId).subscribe(
+      data => { 
+        this.publication = data;
+        console.log(this.publication);
       },
       error => {
       }

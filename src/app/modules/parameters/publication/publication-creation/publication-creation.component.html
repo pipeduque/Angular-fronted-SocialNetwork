@@ -1,1 +1,37 @@
-<p>publication-creation works!</p>
+<fieldset>
+    <legend>Crear publicación</legend>
+    <div class="row">
+        <form class="col s12" [formGroup]="fgValidator">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="title" formControlName="title" type="text" class="validate">
+                    <label for="title">Titulo</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="description" formControlName="description" type="text" class="validate">
+                    <label for="description">Descripcion</label>
+                </div>
+            </div>
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Imagen</span>
+                    <input type="file" (change)="onFileSelect($event)">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <input type="text" formControlName="pathImage">
+            <div class="row">
+                <div class="input-field col s13">
+                    <a routerLink="/home" class="waves-effect waves-light btn red"><i class="material-icons right">cancel</i>Cancelar</a> &nbsp;&nbsp;
+                    <button class="btn waves-effect waves-light" type="button" (click)="saveNewPublicationFn()" name="action">Crear
+                    <i class="material-icons right">send</i>
+                  </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</fieldset>
